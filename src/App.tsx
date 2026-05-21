@@ -1,9 +1,13 @@
-import React from 'react'
+import Header from './components/Header.tsx'
+import Body from "./components/Body.tsx";
 
 function App() {
   return (
-    <div>App</div>
+    <div className=''>
+      <Header />
+      <Body/>
+    </div>
   )
 }
 
-export default App
+export default App 

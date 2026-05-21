@@ -1,0 +1,84 @@
+/** @format */
+
+import shoe from "../assets/images/image-product-1.jpg";
+import cart from "../assets/images/icon-cart.svg";
+import plus from "../assets/images/icon-plus.svg";
+import minus from "../assets/images/icon-minus.svg";
+import view1 from "../assets/images/image-product-1-thumbnail.jpg";
+import view2 from "../assets/images/image-product-2-thumbnail.jpg";
+import view3 from "../assets/images/image-product-3-thumbnail.jpg";
+import view4 from "../assets/images/image-product-4-thumbnail.jpg";
+function Body() {
+  return (
+    <div className='md:flex justify-center gap-28 items-center md:mt-20'>
+      <div className='w-100'>
+        <div className='md:rounded-2xl overflow-hidden'>
+          <img
+            src={shoe}
+            alt=''
+            className='w-full h-100 object-cover cursor-pointer'
+          />
+        </div>
+        <div className='mt-4 gap-4 hidden md:flex'>
+          <div className='rounded-md overflow-hidden border-2 border-Orange cursor-pointer '>
+            <img src={view1} alt='' className=' opacity-50'/>
+          </div>
+          <div className='rounded-md overflow-hidden border-2 border-white cursor-pointer '>
+            <img src={view2} alt='' className="hover:opacity-50" />
+          </div>
+          <div className='rounded-md overflow-hidden border-2 border-white cursor-pointer '>
+            <img src={view3} alt='' className="hover:opacity-50" />
+          </div>
+          <div className='rounded-md overflow-hidden border-2 border-white cursor-pointer '>
+            <img src={view4} alt='' className="hover:opacity-50" />
+          </div>
+        </div>
+      </div>
+      <div className='m-10 md:m-0 mt-4 md:mt-0'>
+        <div className='w-80'>
+          <span className='font-bold text-xs text-gray-600 tracking-widest uppercase '>
+            sneaker company
+          </span>
+          <p className='text-3xl font-[700] mt-4'>
+            Fall Limited Edition Sneakers
+          </p>
+          <p className='text-gray-500 text-sm mt-5'>
+            Consectetur adipisicing elit. Assumenda quia distinctio fugit, ullam
+            porro repellat! Illum culpa vitae nesciunt facere! maxime soluta
+            minus cupiditate architecto error?
+          </p>
+        </div>
+        <div className="flex justify-between items-center md:block">
+        <div className='flex  md:justify-start items-center gap-4 mt-4'>
+          <p className='font-bold text-2xl '>$125.00 </p>
+          <p className='text-sm text-white font-bold bg-gray-950 text-center w-10 rounded-sm '>
+            50%
+          </p>
+        </div>
+
+        <p className='line-through text-gray-500 font-semibold mt-2 '>
+          $250.00
+        </p>
+</div>
+        <div className='md:flex items-center gap-10 mt-7'>
+          <div className='flex justify-around md:items-center gap-10'>
+            <img src={minus} alt='' className='h-1 cursor-pointer p' />
+            <p className='font-bold'>0</p>
+            <img src={plus} alt='' className='h-3 cursor-pointer p' />
+          </div>
+          <div className='flex justify-center w-full mt-4 md:mt-0 items-center cursor-pointer bg-Orange hover:bg-amber-600 hover:transition duration-300 w-40 h-9 rounded-md gap-2'>
+            <img src={cart} alt='' className='h-4 brightness-0' />
+            <p className='text-xs font-bold'>Add to cart</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div>
+
+      </div>
+    </div>
+  );
+}
+
+export default Body;
