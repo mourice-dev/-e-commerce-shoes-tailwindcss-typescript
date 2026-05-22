@@ -13,3 +13,11 @@ body{
     --color-Orange: hsl(26, 100%, 55%);
     /* --color-Pale-orange: hsl(25, 100%, 94%) */
 }
+.cart{
+    position: absolute;
+    min-height: 150px;
+    width: 250px;
+    background: orange;
+    border-radius: 10px;
+   
+}
