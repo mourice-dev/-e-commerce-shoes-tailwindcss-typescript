@@ -1,5 +1,5 @@
 /** @format */
-
+import { useState } from "react";
 import shoe from "../assets/images/image-product-1.jpg";
 import cart from "../assets/images/icon-cart.svg";
 import plus from "../assets/images/icon-plus.svg";
@@ -8,29 +8,39 @@ import view1 from "../assets/images/image-product-1-thumbnail.jpg";
 import view2 from "../assets/images/image-product-2-thumbnail.jpg";
 import view3 from "../assets/images/image-product-3-thumbnail.jpg";
 import view4 from "../assets/images/image-product-4-thumbnail.jpg";
+import close from "../assets/images/icon-close.svg";
+import next from "../assets/images/icon-next.svg";
+import previous from "../assets/images/icon-previous.svg";
+
 function Body() {
+  const [isClose, setIsClose] = useState(true);
+
+  function checkIsClose() {
+    setIsClose((prev) => !prev);
+  }
   return (
-    <div className='md:flex justify-center gap-28 items-center md:mt-20'>
+    <div className={`md:flex justify-center gap-28 items-center md:mt-20 `}>
       <div className='w-100'>
         <div className='md:rounded-2xl overflow-hidden'>
           <img
             src={shoe}
             alt=''
             className='w-full h-100 object-cover cursor-pointer'
+            onClick={() => setIsClose((prev) => false)}
           />
         </div>
         <div className='mt-4 gap-4 hidden md:flex'>
           <div className='rounded-md overflow-hidden border-2 border-Orange cursor-pointer '>
-            <img src={view1} alt='' className=' opacity-50'/>
+            <img src={view1} alt='' className=' opacity-50' />
           </div>
           <div className='rounded-md overflow-hidden border-2 border-white cursor-pointer '>
-            <img src={view2} alt='' className="hover:opacity-50" />
+            <img src={view2} alt='' className='hover:opacity-50' />
           </div>
           <div className='rounded-md overflow-hidden border-2 border-white cursor-pointer '>
-            <img src={view3} alt='' className="hover:opacity-50" />
+            <img src={view3} alt='' className='hover:opacity-50' />
           </div>
           <div className='rounded-md overflow-hidden border-2 border-white cursor-pointer '>
-            <img src={view4} alt='' className="hover:opacity-50" />
+            <img src={view4} alt='' className='hover:opacity-50' />
           </div>
         </div>
       </div>
@@ -48,18 +58,18 @@ function Body() {
             minus cupiditate architecto error?
           </p>
         </div>
-        <div className="flex justify-between items-center md:block">
-        <div className='flex  md:justify-start items-center gap-4 mt-4'>
-          <p className='font-bold text-2xl '>$125.00 </p>
-          <p className='text-sm text-white font-bold bg-gray-950 text-center w-10 rounded-sm '>
-            50%
+        <div className='flex justify-between items-center md:block'>
+          <div className='flex  md:justify-start items-center gap-4 mt-4'>
+            <p className='font-bold text-2xl '>$125.00 </p>
+            <p className='text-sm text-white font-bold bg-gray-950 text-center w-10 rounded-sm '>
+              50%
+            </p>
+          </div>
+
+          <p className='line-through text-gray-500 font-semibold mt-2 '>
+            $250.00
           </p>
         </div>
-
-        <p className='line-through text-gray-500 font-semibold mt-2 '>
-          $250.00
-        </p>
-</div>
         <div className='md:flex items-center gap-10 mt-7'>
           <div className='flex justify-around md:items-center gap-10'>
             <img src={minus} alt='' className='h-1 cursor-pointer p' />
@@ -73,9 +83,44 @@ function Body() {
         </div>
       </div>
 
-      
-      <div>
+      <div
+        className={`fixed inset-0 z-50 hidden bg-black/75 md:items-center md:justify-center ${isClose ? "md:hidden" : "md:flex"}`}>
+        <div className='w-[550px]'>
+          <div className='mb-5 flex justify-end'>
+            <button onClick={() => checkIsClose()} className='cursor-pointer'>
+              <img src={close} alt='close' className='h-5 brightness-0 invert' />
+            </button>
+          </div>
 
+          <div className='relative'>
+            <div className='overflow-hidden rounded-2xl'>
+              <img src={shoe} alt='' className='h-[550px] w-full object-cover' />
+            </div>
+
+            <button className='absolute -left-7 top-1/2 flex h-14 w-14 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white hover:text-Orange'>
+              <img src={previous} alt='previous' className='h-4' />
+            </button>
+
+            <button className='absolute -right-7 top-1/2 flex h-14 w-14 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white hover:text-Orange'>
+              <img src={next} alt='next' className='h-4' />
+            </button>
+          </div>
+
+          <div className='mx-auto mt-10 flex w-[450px] gap-7'>
+            <div className='overflow-hidden rounded-md border-2 border-Orange bg-white cursor-pointer'>
+              <img src={view1} alt='' className='opacity-50' />
+            </div>
+            <div className='overflow-hidden rounded-md border-2 border-transparent cursor-pointer'>
+              <img src={view2} alt='' className='hover:opacity-50' />
+            </div>
+            <div className='overflow-hidden rounded-md border-2 border-transparent cursor-pointer'>
+              <img src={view3} alt='' className='hover:opacity-50' />
+            </div>
+            <div className='overflow-hidden rounded-md border-2 border-transparent cursor-pointer'>
+              <img src={view4} alt='' className='hover:opacity-50' />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

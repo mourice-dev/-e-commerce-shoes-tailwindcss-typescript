@@ -4,7 +4,9 @@ import { useState } from "react";
 import cart from "../assets/images/icon-cart.svg";
 import profile from "../assets/images/image-avatar.png";
 import menu from "../assets/images/icon-menu.svg";
-import close from "../assets/images/icon-close.svg";
+import close from "../assets/images/icon-close.svg"; 
+import sneakerslogo from "../assets/images/logo.svg";
+
 
 function Header() {
   const [isClose, setIsClose] = useState(false);
@@ -16,7 +18,7 @@ function Header() {
   return (
     <div className='relative'>
       <div
-        className={`absolute h-screen w-60 bg-white pl-8 p-5 ${isClose ? "block" : "hidden"}`}
+        className={`absolute h-screen w-60 md:hidden bg-white pl-8 p-5 ${isClose ? "block" : "hidden"}`}
         id='close'>
         <nav className=''>
           <img
@@ -26,7 +28,7 @@ function Header() {
             onClick={() => checkIsClose()}
           />
 
-          <ul className='items-center gap-8 no-underline list-none font-bold text-gray-700  text-sm mt-8'>
+          <ul className='items-center gap-8 no-underline list-none font-bold text-gray-700   text-xs mt-8'>
             <li className='hover:text-gray-900 mt-4'>
               <a href='#'>Collections</a>
             </li>
@@ -59,15 +61,19 @@ function Header() {
             <a
               href='#'
               className='font-[700] text-3xl text-gray-800 hover:text-gray-900'>
-              sneakers
+              <img src={sneakerslogo} alt='' />
             </a>
           </div>
-          <ul className='items-center gap-8 no-underline list-none hidden md:flex text-gray-500'>
+          <ul className='items-center gap-8 no-underline text-xs font-semibold list-none hidden md:flex text-gray-500'>
             <li className='hover:text-gray-700'>
-              <a href='#' className='border-b-0 py-8 border-b-white'>Collections</a>
+              <a href='#' className='border-b-0 py-8 border-b-white'>
+                Collections
+              </a>
             </li>
             <li className='hover:text-gray-700'>
-              <a href='#' className='border-b-0 py-8 border-b-white'>Men</a>
+              <a href='#' className='border-b-0 py-8 border-b-white'>
+                Men
+              </a>
             </li>
             <li className='hover:text-gray-700  '>
               <a href='#' className='border-b-4 py-8 border-b-Orange'>
@@ -75,10 +81,14 @@ function Header() {
               </a>
             </li>
             <li className='hover:text-gray-700'>
-              <a href='#' className='border-b-0 py-8 border-b-white'>About</a>
+              <a href='#' className='border-b-0 py-8 border-b-white'>
+                About
+              </a>
             </li>
             <li className='hover:text-gray-700'>
-              <a href='#' className='border-b-0 py-8 border-b-white'>Contact</a>
+              <a href='#' className='border-b-0 py-8 border-b-white'>
+                Contact
+              </a>
             </li>
           </ul>
         </nav>
