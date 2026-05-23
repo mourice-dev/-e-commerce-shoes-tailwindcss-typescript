@@ -136,7 +136,7 @@ function Header() {
                       <img
                         src={deleting}
                         alt=''
-                        className='h-4 cursor-pointer'
+                        className='h-4 cursor-pointer hover:brightness-0 transition duration-700'
                       />
                     </div>
 
